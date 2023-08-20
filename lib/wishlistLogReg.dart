@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:wishlist/auth_controller.dart';
 import 'package:wishlist/homepage.dart';
@@ -29,7 +30,7 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 41,
-                color: Colors.lightBlue,
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 30),
@@ -48,7 +49,7 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
                   ),
                 ),
               ),
-              labelColor: Colors.lightBlue,
+              labelColor: Colors.black,
               unselectedLabelColor: Colors.grey.shade600,
               padding: const EdgeInsets.only(top: 15,bottom: 28),
               tabs: [
@@ -111,7 +112,7 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
                         ),
                         style: ElevatedButton.styleFrom(
                           fixedSize: Size(240, 54),
-                          primary: Colors.lightBlue,
+                          primary: Colors.black,
                         ),
                       )
                     ],
@@ -135,24 +136,24 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
                           ),
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Padding(
-                        padding: EdgeInsets.only(right: 30, left: 30),
-                        child: TextField(
-                          controller: uNameController,
-                          decoration: InputDecoration(
-                            hintText: "Username",
-                            hintStyle: TextStyle(
-                              color: Colors.grey,
-                              fontSize: 20,
-                            ),
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            fillColor: Colors.grey.shade300,
-                            filled: true,
-                          ),
-                        ),
-                      ),
+                      // SizedBox(height: 20),
+                      // Padding(
+                      //   padding: EdgeInsets.only(right: 30, left: 30),
+                      //   child: TextField(
+                      //     controller: uNameController,
+                      //     decoration: InputDecoration(
+                      //       hintText: "Username",
+                      //       hintStyle: TextStyle(
+                      //         color: Colors.grey,
+                      //         fontSize: 20,
+                      //       ),
+                      //       enabledBorder: InputBorder.none,
+                      //       focusedBorder: InputBorder.none,
+                      //       fillColor: Colors.grey.shade300,
+                      //       filled: true,
+                      //     ),
+                      //   ),
+                      // ),
                       SizedBox(height: 20),
                       Padding(
                         padding: EdgeInsets.only(right: 30, left: 30),
@@ -174,7 +175,7 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
                       SizedBox(height: 35),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                          AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
                         },
                         child: Text(
                           "Register",
@@ -185,7 +186,7 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
                         ),
                         style: ElevatedButton.styleFrom(
                           fixedSize: Size(240, 54),
-                          primary: Colors.lightBlue,
+                          primary: Colors.black,
                         ),
                       )
                     ],
