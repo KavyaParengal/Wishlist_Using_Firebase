@@ -23,8 +23,9 @@ class _WishlistLoginRegiState extends State<WishlistLoginRegi> {
         length: 2,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: MediaQuery.of(context).size.height*.22),
+            SizedBox(height: MediaQuery.of(context).size.height*.20),
             const Text(
               "Wishly",
               style: TextStyle(
